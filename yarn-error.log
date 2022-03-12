@@ -1,0 +1,111 @@
+Arguments: 
+  /Users/bitzr/.nvm/versions/node/v17.6.0/bin/node /Users/bitzr/.nvm/versions/node/v17.6.0/bin/yarn install
+
+PATH: 
+  /Users/bitzr/.nvm/versions/node/v17.6.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/bitzr/.nvm/versions/node/v17.6.0/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  17.6.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/bitzr/Projects/xfun/xfun-apiV2/package.json: Unexpected token } in JSON at position 2385
+      at JSON.parse (<anonymous>)
+      at /Users/bitzr/.nvm/versions/node/v17.6.0/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/bitzr/.nvm/versions/node/v17.6.0/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /Users/bitzr/.nvm/versions/node/v17.6.0/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "alphabit-api",
+    "version": "0.0.1",
+    "description": "Alphabit REST API",
+    "author": "<dev@bitzr.nl>",
+    "repository": "https://github.com/bitzr01/alphabit-api",
+    "keywords": [
+      "typescript",
+      "boilerplate",
+      "koa",
+      "api",
+      "alphabit"
+    ],
+    "engines": {
+      "node": ">=17.0.0",
+      "npm": ">=8.3.2"
+    },
+    "main": "./dist/tsc/index.js",
+    "types": "./dist/tsc/index.d.ts",
+    "scripts": {
+      "dev": "NODE_ENV=dev tsc-watch --onSuccess 'node --inspect=0.0.0.0:5858 ./dist/tsc/src/index.js' | pino-pretty -t 'SYS:HH:MM:ss' -i hostname",
+      "lint": "eslint src/ --fix --ext .js,.jsx,.ts,.tsx",
+      "clean": "rm -rf dist docs coverage .nyc_output",
+      "build": "tsc",
+      "start": "node ./dist/tsc/src/index.js",
+      "test": "NODE_ENV=test mocha",
+      "coverage": "nyc mocha"
+    },
+    "devDependencies": {
+      "@istanbuljs/nyc-config-typescript": "^1.0.2",
+      "@types/async": "^3.2.12",
+      "@types/chai": "^4.3.0",
+      "@types/chai-as-promised": "^7.1.4",
+      "@types/koa": "^2.13.4",
+      "@types/koa__cors": "^3.1.1",
+      "@types/koa-bodyparser": "^4.3.5",
+      "@types/koa-helmet": "^6.0.4",
+      "@types/koa-router": "^7.4.4",
+      "@types/mocha": "^9.1.0",
+      "@types/node": "^17.0.13",
+      "@types/sinon": "^10.0.9",
+      "@types/supertest": "^2.0.11",
+      "@typescript-eslint/eslint-plugin": "^5.10.1",
+      "@typescript-eslint/parser": "^5.10.1",
+      "chai": "^4.3.6",
+      "chai-as-promised": "^7.1.1",
+      "eslint": "^8.7.0",
+      "eslint-config-airbnb-base": "^15.0.0",
+      "eslint-config-airbnb-typescript": "^16.1.0",
+      "eslint-config-prettier": "^8.3.0",
+      "eslint-plugin-eslint-comments": "^3.2.0",
+      "eslint-plugin-import": "^2.25.4",
+      "mocha": "^9.2.0",
+      "nyc": "^15.1.0",
+      "source-map-support": "^0.5.21",
+      "ts-node": "^10.4.0",
+      "tsc-watch": "^4.6.0",
+      "typescript": "^4.5.5"
+    },
+    "dependencies": {
+      "@koa/cors": "^3.1.0",
+      "@koa/router": "^10.1.1",
+      "async": "^3.2.3",
+      "bcryptjs": "^2.4.3",
+      "ethers": "^5.5.3",
+      "joi": "^17.6.0",
+      "jsonwebtoken": "^8.5.1",
+      "koa": "^2.13.4",
+      "koa-bodyparser": "^4.3.0",
+      "koa-helmet": "^6.1.0",
+      "koa-requestid": "^2.1.0",
+      "koa-router": "^10.1.1",
+      "koa-session": "^6.2.0",
+      "moment": "^2.29.1",
+      "pino": "^7.6.4",
+      "pino-pretty": "^7.5.1",
+      "reflect-metadata": "^0.1.13",
+      "sinon": "^12.0.1",
+      "supertest": "^6.2.2",
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

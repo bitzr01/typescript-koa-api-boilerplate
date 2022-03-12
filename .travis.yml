@@ -1,0 +1,15 @@
+sudo: false
+language: node_js
+node_js:
+  - node
+
+install:
+  - yarn install
+
+script:
+    - yarn lint
+    - yarn build
+    - yarn coverage
+
+after_script:
+    - nyc report --reporter=text-lcov | coveralls
