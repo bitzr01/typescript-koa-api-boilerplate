@@ -2,9 +2,11 @@
 
 Basic boilerplate for Node.js development with TypeScript, KOA, koa-router, koa-helmet, @koa/cors, koa-bodyparser, ESLint, Prettier, Airbnb styleguide, Mocha, Chai, istanbul, tsc-watch, supertest, sinon.js, pino, tsc-watch
 
-[![CodeQL](https://github.com/bitzr01/typescript-koa-boilerplate/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/bitzr01/typescript-koa-boilerplate/actions/workflows/codeql-analysis.yml)
+[![Node.js CI](https://github.com/bitzr01/typescript-koa-api-boilerplate/actions/workflows/node.js.yml/badge.svg)](https://github.com/bitzr01/typescript-koa-api-boilerplate/actions/workflows/node.js.yml)
 
-[![Node.js CI](https://github.com/bitzr01/typescript-koa-boilerplate/actions/workflows/node.js.yml/badge.svg)](https://github.com/bitzr01/typescript-koa-boilerplate/actions/workflows/node.js.yml)
+[![Coverage Status](https://coveralls.io/repos/github/bitzr01/typescript-koa-api-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/bitzr01/typescript-koa-api-boilerplate?branch=master)
+
+[![CodeQL](https://github.com/bitzr01/typescript-koa-api-boilerplate/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/bitzr01/typescript-koa-api-boilerplate/actions/workflows/codeql-analysis.yml)
 
 [<img alt="MIT Licence" src="https://badges.frapsoft.com/os/mit/mit.svg?v=103">](https://opensource.org/licenses/mit-license.php)
 
