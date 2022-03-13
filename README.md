@@ -27,15 +27,20 @@ This boilerplate includes the following features:
 -   GitHub actions for CI and coverage reporting with [coveralls](https://coveralls.io/)
 
 
+## OpenApi
+We are working of a OpenApi 3.0 spec.
+This means you start defining your endpoint in the spec.yml
+Integration and contract tests are generated based on the spec using oatts and/or portman
+
+
 ## Commands
 
-> Run
+> Build
 
 ```zsh 
 yarn install     # install dependency's
 yarn clean       # remove all generated
 yarn build       # clean and build dist
-yarn start       # start server
 yarn dev         # tsc-watch and start server with debugger
 yarn lint        # Lint all sourcecode
 ```
@@ -49,6 +54,12 @@ yarn portman     # generate postman collection and run newman tests
 yarn coverage    # Calculate the coverage of all
 ```
 
+> Run
+
+```zsh
+yarn start       # run server
+```
+
 ## Config
 the default config: `src/config/config.json` is overwritten with anything that is set in the different environment configs in `src/config/environments`
 
@@ -56,4 +67,7 @@ required environment variables:
 NODE_ENV
 DATABASE_URL
 
-modules need to be registered in src/bin/server.ts
+
+## Modules
+modules need to be registered in src/bin/server.ts (look at health module)
+
