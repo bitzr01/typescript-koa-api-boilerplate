@@ -1,0 +1,83 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["interactiveTransactions"]
+}
+
+model Transaction {
+  id                BigInt @default(autoincrement())    @id
+  createdAt         DateTime                            @default(now())
+  token             Token
+  fromAddr          String
+  toAddr            String
+  amount            Decimal
+  hash              String                              @unique
+  block             BigInt
+  status            TxStatus                            @default(PENDING)
+  exchangeRequest   ExchangeRequest?
+}
+
+model ExchangeRequest {
+  id            BigInt @default(autoincrement())    @id
+  createdAt     DateTime                            @default(now())
+  triggerTxId   BigInt
+  hash          String?                             @unique
+  burnTxHash    String?                             @unique
+  status        ExchangeStatus
+  TriggerTx     Transaction?                        @relation(fields: [triggerTxId], references: [id])
+}
+
+model Account {
+  id            BigInt @default(autoincrement())    @id
+  createdAt     DateTime                            @default(now())
+  address       String                              @unique
+  funBalance    Decimal
+  xFunBalance   Decimal
+}
+
+model FunTokenPrice  {
+  id            BigInt @default(autoincrement())    @id
+  isActive      Boolean                             @default(true)
+  createdAt     DateTime                            @default(now())
+  usd           Decimal
+  eth           Decimal
+}
+
+model EthGasPrice  {
+  id                        BigInt @default(autoincrement())    @id
+  isActive                  Boolean                             @default(true)
+  createdAt                 DateTime                            @default(now())
+  price                     Decimal
+  maxFeePerGas              Decimal
+  maxPriorityFeePerGas      Decimal
+}
+
+enum Token {
+  FUN
+  XFUN
+}
+
+enum TxStatus {
+  COMPLETED
+  FAILED
+  PENDING
+}
+
+enum ExchangeStatus {
+  FUN_TO_XFUN_PENDING_TO_MINT
+  FUN_TO_XFUN_MINTING
+  FUN_TO_XFUN_MINTED
+  XFUN_TO_FUN_PENDING_TO_BURN
+  XFUN_TO_FUN_BURNING
+  XFUN_TO_FUN_BURNED
+  XFUN_TO_FUN_TRANSFERING
+  XFUN_TO_FUN_TRANSFERED
+  FAILED
+}

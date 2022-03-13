@@ -40,7 +40,7 @@ export const checkRequiredEnvironmentVariables = (
 export const getEnvironment = () =>
   (process.env.NODE_ENV as ENV) || ENV.development;
 
-const requiredEnvironmentVariables = ['NODE_ENV'];
+const requiredEnvironmentVariables = ['NODE_ENV', 'DATABASE_URL'];
 
 checkRequiredEnvironmentVariables(requiredEnvironmentVariables);
 const env = getEnvironment();

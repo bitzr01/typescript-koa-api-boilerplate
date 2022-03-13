@@ -68,6 +68,7 @@
   "dependencies": {
     "@koa/cors": "^3.2.0",
     "@koa/router": "^10.1.1",
+    "@prisma/client": "3.10.0",
     "deepmerge-ts": "^4.0.0",
     "dotenv": "^16.0.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -79,7 +80,8 @@
     "moment": "^2.29.1",
     "pino": "^7.8.1",
     "pino-pretty": "^7.5.3",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "prisma": "^3.10.0"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
