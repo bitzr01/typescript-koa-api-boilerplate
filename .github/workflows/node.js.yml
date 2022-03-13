@@ -27,8 +27,8 @@ jobs:
         with:
           cmd: build # will run `yarn build` command
       - uses: borales/actions-yarn@v2.3.0
-          env:
-            NODE_ENV: test
+        env:
+          NODE_ENV: test
         with:
           cmd: coverage # will run `yarn coverage` command
           
