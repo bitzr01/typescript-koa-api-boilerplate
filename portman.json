@@ -1,7 +1,0 @@
-{
-  "local": "spec.yml",
-  "output": "collection.postman.json",
-  "includeTests": true,
-  "syncPostman": false,
-  "runNewman": true
-}

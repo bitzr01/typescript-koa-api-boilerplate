@@ -1,0 +1,36 @@
+{
+  "asdasd":"dfasdfasd",
+  "env": "development",
+  "server": {
+    "port": 420,
+    "host": "localhost",
+    "logger": {},
+    "bodyParser": { "enableTypes": ["json"], "jsonLimit": "10mb" },
+    "cors": {
+      "allowMethods": ["GET", "HEAD", "PUT", "POST", "DELETE", "PATCH"],
+      "allowHeaders": ["Content-Type", "Authorization"],
+      "exposeHeaders": ["Content-Length", "Date", "X-Request-Id"],
+      "credentials": true,
+      "origin": "http://localhost:3000"
+    },
+    "helmet": {
+      "directives": {
+        "defaultSrc": ["'self'"],
+        "scriptSrc": ["'self'", "'unsafe-inline'", "cdnjs.cloudflare.com"],
+        "styleSrc": [
+          "'self'",
+          "'unsafe-inline'",
+          "cdnjs.cloudflare.com",
+          "fonts.googleapis.com"
+        ],
+        "fontSrc": ["'self'", "fonts.gstatic.com"],
+        "imgSrc": [
+          "'self'",
+          "data:",
+          "online.swagger.io",
+          "validator.swagger.io"
+        ]
+      }
+    }
+  }
+}

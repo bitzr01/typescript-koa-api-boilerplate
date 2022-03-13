@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import Koa from 'koa';
 import pino from 'pino';
 import cors from '@koa/cors';
@@ -6,11 +7,10 @@ import bodyParser from 'koa-bodyparser';
 import HealthMonitor from '../lib/HealthMonitor';
 import errorHandler from '../server/middleware/error-handler';
 import logRequest from '../server/middleware/log-request';
-import config from "../config";
+import config from '../config';
 import health from '../server/modules/health';
 
 const logger: pino.Logger = pino(config.server.logger);
-
 const app = new Koa();
 
 app.use(helmet.contentSecurityPolicy(config.server.helmet));
@@ -21,11 +21,11 @@ app.use(cors(config.server.cors));
 
 // register healt module
 export const healthMonitor = new HealthMonitor();
-health(app, healthMonitor)
+health(app, healthMonitor);
 
 // register other modules
 
-
 export default app.listen(config.server.port);
 
+// eslint-disable-next-line @typescript-eslint/restrict-template-expressions
 logger.info(`XFun API running on port ${config.server.port}`);

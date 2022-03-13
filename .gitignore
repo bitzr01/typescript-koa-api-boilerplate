@@ -6,3 +6,4 @@ dist/tsc
 .nyc_output
 .DS_Store
 tmp
+.env

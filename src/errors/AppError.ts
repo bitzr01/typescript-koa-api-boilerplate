@@ -13,7 +13,7 @@ export default class AppError extends Error {
   public toModel() {
     return {
       code: this.code,
-      message: this.message
+      message: this.message,
     };
   }
 }
