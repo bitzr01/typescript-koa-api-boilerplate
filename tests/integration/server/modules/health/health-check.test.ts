@@ -8,7 +8,7 @@ describe('GET /health', () => {
   const app: SuperTest<Test> = supertest(testServer);
 
   it('Should return 200 when server is running healthy', async () => {
-    const res = await app.get('/health').expect(200);
+    const res = await app.get('/healthz').expect(200);
 
     expect(res.body.isShuttingDown).equals(false);
   });
@@ -16,9 +16,15 @@ describe('GET /health', () => {
   it('Should return 503 when server is shutting down', async () => {
     healthMonitor.shuttingDown()
 
-    const res = await app.get('/health').expect(503);
+    const res = await app.get('/healthz').expect(503);
 
     expect(res.body.isShuttingDown).equals(true);
+  });
+  it('Should return 503 when server is down', async () => {
+    testServer.close()
+    await app.get('/healthz').expect(503);
+
+    
   });
   after(()=>{
     testServer.close()

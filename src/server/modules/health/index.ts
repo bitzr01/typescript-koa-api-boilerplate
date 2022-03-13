@@ -9,7 +9,7 @@ export default (server: Koa, healthMonitor: HealthMonitor): void => {
   const controller = new HealthController(healthMonitor);
   const router: Router = new Router();
 
-  router.get('/health', controller.getHealth.bind(controller));
+  router.get('/healthz', controller.getHealth.bind(controller));
 
   server.use(router.routes());
 };
