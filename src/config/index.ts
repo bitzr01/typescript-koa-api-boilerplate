@@ -8,6 +8,11 @@ import * as envs from './environments';
 
 export interface AppConfig {
   env: ENV;
+  prefix: string;
+  version: number;
+  specPath: string;
+  specFolder: string;
+  swaggerPath: string;
   server: ServerConfig;
 }
 

@@ -1,5 +1,10 @@
 {
   "env": "development",
+  "prefix": "api",
+  "version": "1",
+  "swaggerPath": "/docs",
+  "specPath": "/docs/spec",
+  "specFolder": "./spec",
   "server": {
     "port": 420,
     "host": "localhost",

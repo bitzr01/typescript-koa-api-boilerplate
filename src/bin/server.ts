@@ -5,12 +5,13 @@
 import 'dotenv/config';
 import Koa from 'koa';
 import pino from 'pino';
-import yamljs from 'yamljs';
 import cors from '@koa/cors';
 import helmet from 'koa-helmet';
 import bodyParser from 'koa-bodyparser';
 import { koaSwagger } from 'koa2-swagger-ui';
 import Router from 'koa-router';
+import serve from 'koa-static';
+import mount from 'koa-mount';
 import HealthMonitor from '../lib/HealthMonitor';
 import errorHandler from '../server/middleware/error-handler';
 import logRequest from '../server/middleware/log-request';
@@ -25,17 +26,17 @@ app.use(logRequest(logger));
 app.use(errorHandler(logger));
 app.use(bodyParser(config.server.bodyParser));
 app.use(cors(config.server.cors));
+app.use(mount(config.specPath, serve(config.specFolder)));
 
 const router = new Router();
-// .load loads file from root.
-const spec = yamljs.load(`spec.yml`);
-router.use(koaSwagger({ swaggerOptions: { spec } }));
-
 router.get(
-  '/docs',
-  koaSwagger({ routePrefix: false, swaggerOptions: { spec } }),
+  config.swaggerPath,
+  koaSwagger({
+    routePrefix: false,
+    specPrefix: config.specPath,
+    swaggerOptions: { url: `${config.specPath}/openapi.json` },
+  }),
 );
-
 app.use(router.routes());
 
 // register healt module
@@ -47,4 +48,4 @@ health(app, healthMonitor);
 export default app.listen(config.server.port);
 
 // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-logger.info(`XFun API running on port ${config.server.port}`);
+logger.info(`XFun API listening on port ${config.server.port}`);

@@ -1,0 +1,70 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "API",
+    "description": "this is a description",
+    "contact": {
+      "email": "dev@bitzr.nl"
+    },
+    "version": "0.0.1"
+  },
+  "servers": [
+    {
+      "url": "/api/v1"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Health",
+      "description": "API health info"
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "summary": "Returns API health info",
+        "description": "Returns a health object",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Health"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Health": {
+        "type": "object",
+        "properties": {
+          "startTime": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2022-03-13T23:15:27.107Z"
+          },
+          "upTime": {
+            "type": "string",
+            "example": "2 minutes"
+          },
+          "shuttingDown": {
+            "type": "boolean",
+            "example": false
+          }
+        },
+        "xml": {
+          "name": "health"
+        }
+      }
+    }
+  }
+}
