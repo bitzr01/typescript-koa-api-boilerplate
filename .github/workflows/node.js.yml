@@ -29,6 +29,8 @@ jobs:
       - uses: borales/actions-yarn@v2.3.0
         with:
           cmd: coverage # will run `yarn coverage` command
+          env:
+            NODE_ENV: test
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
