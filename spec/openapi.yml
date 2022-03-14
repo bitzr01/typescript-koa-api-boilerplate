@@ -7,13 +7,13 @@ info:
     email: dev@bitzr.nl
   version: 0.0.1
 servers:
-  - url: localhost:420/api/v1
+  - url: localhost:8080/api/v1
     description: local test
   - url: /api/v1
     description: test
-  - url: api.staging:420/api/v1
+  - url: api.staging/api/v1
     description: staging
-  - url: api:420/api/v1
+  - url: api/api/v1
     description: production
 tags:
   - name: Health

@@ -6,7 +6,7 @@
   "specPath": "/docs/spec",
   "specFolder": "./spec",
   "server": {
-    "port": 420,
+    "port": 8080,
     "host": "localhost",
     "logger": {},
     "bodyParser": { "enableTypes": ["json"], "jsonLimit": "10mb" },

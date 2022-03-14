@@ -24,9 +24,9 @@
     "clean": "rm -rf dist tmp docs coverage .nyc_output tests/gen/* collection.postman.json",
     "build": "tsc",
     "start": "node ./dist/tsc/bin/server.js",
-    "test": "mocha",
-    "coverage": "nyc mocha",
-    "test:gen": "npx oatts generate -s spec/openapi.yml -w tests/gen --host localhost:420/api/v1",
+    "test": "NODE_ENV=test mocha",
+    "coverage": "NODE_ENV=test nyc mocha",
+    "test:gen": "npx oatts generate -s spec/openapi.yml -w tests/gen --host localhost:8080/api/v1",
     "portman": "npx portman -l spec/openapi.yml -n true -t true --syncPostman false"
   },
   "devDependencies": {
@@ -37,7 +37,9 @@
     "@types/koa": "^2.13.4",
     "@types/koa-bodyparser": "^4.3.6",
     "@types/koa-helmet": "^6.0.4",
+    "@types/koa-mount": "^4.0.1",
     "@types/koa-router": "^7.4.4",
+    "@types/koa-static": "^4.0.2",
     "@types/koa__cors": "^3.1.1",
     "@types/mocha": "^9.1.0",
     "@types/node": "^17.0.21",
@@ -63,15 +65,15 @@
     "supertest": "^6.2.2",
     "ts-node": "^10.7.0",
     "tsc-watch": "^4.6.2",
-    "typescript": "^4.6.2"
+    "typescript": "^4.6.2",
+    "pino-pretty": "^7.5.3",
+    "portman": "^0.0.3",
+    "prettier": "^2.5.1"
   },
   "dependencies": {
     "@koa/cors": "^3.2.0",
     "@koa/router": "^10.1.1",
     "@prisma/client": "3.10.0",
-    "@types/koa-mount": "^4.0.1",
-    "@types/koa-static": "^4.0.2",
-    "@types/yamljs": "^0.2.31",
     "deepmerge-ts": "^4.0.0",
     "dotenv": "^16.0.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -85,10 +87,7 @@
     "koa2-swagger-ui": "^5.4.0",
     "moment": "^2.29.1",
     "pino": "^7.8.1",
-    "pino-pretty": "^7.5.3",
-    "prettier": "^2.5.1",
-    "prisma": "^3.10.0",
-    "yamljs": "^0.3.0"
+    "prisma": "^3.10.0"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",

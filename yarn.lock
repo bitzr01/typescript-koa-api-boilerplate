@@ -761,11 +761,6 @@
   dependencies:
     "@types/superagent" "*"
 
-"@types/yamljs@^0.2.31":
-  version "0.2.31"
-  resolved "https://registry.yarnpkg.com/@types/yamljs/-/yamljs-0.2.31.tgz#b1a620b115c96db7b3bfdf0cf54aee0c57139245"
-  integrity sha512-QcJ5ZczaXAqbVD3o8mw/mEBhRvO5UAdTtbvgwL/OgoWubvNBh6/MxLBAigtcgIFaq3shon9m3POIxQaLQt4fxQ==
-
 "@typescript-eslint/eslint-plugin@^5.14.0":
   version "5.14.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.14.0.tgz#5119b67152356231a0e24b998035288a9cd21335"
@@ -2390,7 +2385,7 @@ glob-parent@^6.0.1:
   dependencies:
     is-glob "^4.0.3"
 
-glob@7.2.0, glob@^7.0.5, glob@^7.1.3, glob@^7.1.4, glob@^7.1.5, glob@^7.1.6:
+glob@7.2.0, glob@^7.1.3, glob@^7.1.4, glob@^7.1.5, glob@^7.1.6:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.2.0.tgz#d15535af7732e02e948f4c41628bd910293f6023"
   integrity sha512-lmLf6gtyrPq8tTjSmrO94wBeQbFR3HbLHbuyD69wuyQkImp2hWqMGB47OX65FBkPffO641IP9jWa1z4ivqG26Q==
@@ -2931,6 +2926,11 @@ istanbul-reports@^3.0.2:
   dependencies:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
+
+jinang@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/jinang/-/jinang-0.1.0.tgz#b4c2cc112258d5231dde97e30e5bc4a619eb7309"
+  integrity sha1-tMLMESJY1SMd3pfjDlvEphnrcwk=
 
 joi@^17.6.0:
   version "17.6.0"
@@ -3590,6 +3590,11 @@ no-case@^3.0.4:
     lower-case "^2.0.2"
     tslib "^2.0.3"
 
+noda@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/noda/-/noda-0.1.2.tgz#6c3afd6072c40aacf22dbf54150ded149995b6ca"
+  integrity sha1-bDr9YHLECqzyLb9UFQ3tFJmVtso=
+
 node-cleanup@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/node-cleanup/-/node-cleanup-2.1.2.tgz#7ac19abd297e09a7f72a71545d951b517e4dde2c"
@@ -4090,6 +4095,14 @@ pluralize@^8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-8.0.0.tgz#1a6fa16a38d12a1901e0320fa017051c539ce3b1"
   integrity sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==
+
+portman@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/portman/-/portman-0.0.3.tgz#0e463dce97185bd3e2c233876c8ee00289a763fa"
+  integrity sha1-DkY9zpcYW9PiwjOHbI7gAomnY/o=
+  dependencies:
+    jinang "^0.1.0"
+    noda "^0.1.2"
 
 postman-collection-transformer@4.1.6:
   version "4.1.6"
@@ -5376,14 +5389,6 @@ yaml@1.10.2, yaml@^1.10.0, yaml@^1.10.2:
   version "1.10.2"
   resolved "https://registry.yarnpkg.com/yaml/-/yaml-1.10.2.tgz#2301c5ffbf12b467de8da2333a459e29e7920e4b"
   integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
-
-yamljs@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/yamljs/-/yamljs-0.3.0.tgz#dc060bf267447b39f7304e9b2bfbe8b5a7ddb03b"
-  integrity sha512-C/FsVVhht4iPQYXOInoxUM/1ELSf9EsgKH34FofQOp6hwCPrW4vG4w5++TED3xRUo8gD7l0P1J1dLlDYzODsTQ==
-  dependencies:
-    argparse "^1.0.7"
-    glob "^7.0.5"
 
 yargs-parser@20.2.4:
   version "20.2.4"
