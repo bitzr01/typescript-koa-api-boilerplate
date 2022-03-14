@@ -52,7 +52,7 @@
     "chakram": "^1.5.0",
     "eslint": "^8.11.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-airbnb-typescript": "^16.1.1",
+    "eslint-config-airbnb-typescript": "^16.1.2",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "^2.25.4",
@@ -60,15 +60,15 @@
     "mocha": "^9.2.2",
     "nyc": "^15.1.0",
     "oatts": "^1.6.0",
+    "pino-pretty": "^7.5.3",
+    "portman": "^0.0.3",
+    "prettier": "^2.5.1",
     "sinon": "^13.0.1",
     "source-map-support": "^0.5.21",
     "supertest": "^6.2.2",
     "ts-node": "^10.7.0",
     "tsc-watch": "^4.6.2",
-    "typescript": "^4.6.2",
-    "pino-pretty": "^7.5.3",
-    "portman": "^0.0.3",
-    "prettier": "^2.5.1"
+    "typescript": "^4.6.2"
   },
   "dependencies": {
     "@koa/cors": "^3.2.0",

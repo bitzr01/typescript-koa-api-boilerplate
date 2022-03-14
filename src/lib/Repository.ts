@@ -1,13 +1,13 @@
-import { PrismaClient } from '@prisma/client';
+// import { PrismaClient } from '@prisma/client';
 
-export default abstract class Repository {
-  private prisma: PrismaClient;
+// export default abstract class Repository {
+//   private prisma: PrismaClient;
 
-  constructor() {
-    this.prisma = new PrismaClient();
-  }
+//   constructor() {
+//     this.prisma = new PrismaClient();
+//   }
 
-  connect(): Promise<void> {
-    return this.prisma.$connect();
-  }
-}
+//   connect(): Promise<void> {
+//     return this.prisma.$connect();
+//   }
+// }
