@@ -27,7 +27,7 @@
     "test": "mocha",
     "coverage": "nyc mocha",
     "test:gen": "npx oatts generate -s spec/openapi.yml -w tests/gen --host localhost:420/api/v1",
-    "portman": "npx portman -l spec/openapi.yml -n true -t true --syncPostman false -b localhost:420/api/v1"
+    "portman": "npx portman -l spec/openapi.yml -n true -t true --syncPostman false"
   },
   "devDependencies": {
     "@apideck/portman": "^1.14.2",

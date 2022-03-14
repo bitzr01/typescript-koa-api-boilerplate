@@ -9,9 +9,19 @@
     "version": "0.0.1"
   },
   "servers": [
+    
     {
-      "url": "/api/v1"
-    }
+      "url": "api.staging:420/api/v1",
+      "description": "staging"
+    },
+    {
+      "url": "api:420/api/v1",
+      "description": "production"
+    },
+    {
+      "url": "localhost:420/api/v1",
+      "description": "local test"
+    },
   ],
   "tags": [
     {
