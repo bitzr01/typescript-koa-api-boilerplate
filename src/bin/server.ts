@@ -48,4 +48,4 @@ health(app, healthMonitor);
 export default app.listen(config.server.port);
 
 // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-logger.info(`XFun API listening on port ${config.server.port}`);
+logger.info(`API listening on port ${config.server.port}`);
